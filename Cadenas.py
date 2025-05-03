@@ -1,21 +1,4 @@
-def menu():
-    print ("Ejercicios con Cadenas")
-    print ("""
-        1. Ejercicio 1
-        2. Ejercicio 2
-        3. Ejercicio 3
-        4. Ejercicio 4
-        5. Ejercicio 5
-        6. Ejercicio 6
-        7. Ejercicio 7
-        8. Ejercicio 8
-        9. Ejercicio 9
-        10. Ejercicio 10
-    """)
-
-    opcion = int(input("Seleccione un programa: "))
-
-    
+def logica_programa(opcion):
     if (opcion == 1):
         print ("Programa que multiplica el Nombre")
         nombre = str(input("Ingresa tu nombre: "))
@@ -94,8 +77,38 @@ def menu():
 
         for i, producto in enumerate(productos, start=1):
             print (f"{i}: {producto}")
-            
+
     else:
         print ("La opción ingresada no es válida.")
+    
+    global continuar
+    seguir = str(input("¿Desea probar otro programa? Si / No: ")).lower()
 
-menu()
+    if (seguir == "si"):
+        continuar = True
+    elif (seguir == "no"):
+        continuar = False
+    else:
+        print ("Opcion no válida...")
+
+def menu():
+    print ("Ejercicios con Cadenas")
+    print ("""
+        1. Ejercicio 1
+        2. Ejercicio 2
+        3. Ejercicio 3
+        4. Ejercicio 4
+        5. Ejercicio 5
+        6. Ejercicio 6
+        7. Ejercicio 7
+        8. Ejercicio 8
+        9. Ejercicio 9
+        10. Ejercicio 10
+    """)
+
+    opcion = int(input("Seleccione un programa: "))
+    logica_programa(opcion)
+
+continuar = True
+while (continuar):
+    menu()
